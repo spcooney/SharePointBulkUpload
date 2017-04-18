@@ -1,0 +1,93 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{653603C0-13F1-4BEA-99C9-B3392DA05A59}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>OrbitOne.SharePoint.Importer.Tests</RootNamespace>
+    <AssemblyName>OrbitOne.SharePoint.Importer.Tests</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Moq">
+      <HintPath>..\Assemblies\Moq.dll</HintPath>
+    </Reference>
+    <Reference Include="nunit.framework, Version=2.5.2.9222, Culture=neutral, PublicKeyToken=96d09a1eb7f44a77, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Assemblies\nunit.framework.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TestDuplicateNameResolver.cs" />
+    <Compile Include="TestFileLoading.cs" />
+    <Compile Include="TestFilenameConversion.cs" />
+    <Compile Include="TestFileStructure.cs" />
+    <Compile Include="TestImport.cs" />
+    <Compile Include="TestValidation.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\OrbitOne.SharePoint.Importer.CommandLineParsing\OrbitOne.SharePoint.Importer.CommandLineParsing.csproj">
+      <Project>{395BF8B2-AEA8-4F1E-A492-DE04F58BE8B5}</Project>
+      <Name>OrbitOne.SharePoint.Importer.CommandLineParsing</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\OrbitOne.SharePoint.Importer.Domain\OrbitOne.SharePoint.Importer.Domain.csproj">
+      <Project>{9F324106-96AC-4596-8B20-CBB6527D94BB}</Project>
+      <Name>OrbitOne.SharePoint.Importer.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\OrbitOne.SharePoint.Importer.FileSystemSource\OrbitOne.SharePoint.Importer.FileSystemSource.csproj">
+      <Project>{9CCAE842-111E-44EC-9FEF-EF57A2AD4C14}</Project>
+      <Name>OrbitOne.SharePoint.Importer.FileSystemSource</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\OrbitOne.SharePoint.Importer.SharePoint\OrbitOne.SharePoint.Importer.SharePoint.csproj">
+      <Project>{9DB5DEB2-F8F1-4BC5-857F-60735C731011}</Project>
+      <Name>OrbitOne.SharePoint.Importer.SharePoint</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
